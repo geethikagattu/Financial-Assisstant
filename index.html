@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Savvy AI - Your Student Financial Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            color: #1e293b;
+        }
+        .container-section {
+            padding: 4rem 1rem;
+        }
+        .btn-primary {
+            @apply bg-indigo-600 text-white font-bold py-3 px-6 rounded-xl transition-transform transform hover:scale-105 hover:bg-indigo-700 shadow-lg;
+        }
+        .card {
+            @apply bg-white p-6 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl;
+        }
+        .chat-container {
+            height: 60vh;
+            max-height: 500px;
+        }
+        .chat-message {
+            max-width: 85%;
+        }
+        .user-message {
+            @apply bg-blue-500 text-white rounded-t-xl rounded-bl-xl p-3 shadow-md;
+        }
+        .ai-message {
+            @apply bg-gray-200 text-gray-800 rounded-t-xl rounded-br-xl p-3 shadow-md;
+        }
+        .link-card {
+            @apply flex items-center p-4 bg-gray-50 rounded-xl shadow-sm transition-all duration-300 hover:bg-gray-100 hover:shadow-md;
+        }
+        .loading-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading-dots span {
+            animation: bounce 0.6s infinite ease-in-out;
+            height: 10px;
+            width: 10px;
+            margin: 0 4px;
+            background-color: #94a3b8;
+            border-radius: 50%;
+        }
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.2s;
+        }
+        .loading-dots span:nth-child(3) {
+            animation-delay: -0.4s;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-indigo-600 text-white py-16 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-4">
+                Financial Savvy AI
+            </h1>
+            <p class="text-lg sm:text-xl font-light opacity-90 max-w-2xl mx-auto mb-8">
+                Your personalized AI financial coach for students. Get smart about money, from saving to investing.
+            </p>
+            <a href="#chat" class="btn-primary">
+                Ask the AI Coach
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8">
+
+        <section id="organize" class="container-section text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Organize Your Money</h2>
+            <p class="text-gray-600 mb-12 max-w-3xl mx-auto">
+                Understanding where your money goes is the first step. Learn how to budget, track your spending, and set financial goals.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="font-semibold text-xl mb-2">Build a Budget</h3>
+                    <p class="text-gray-500 mb-4">
+                        Learn the 50/30/20 rule and create a budget that works for you, so you can control your cash flow.
+                    </p>
+                    <a href="budget.html" class="text-indigo-600 hover:underline font-medium">Learn More &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3 class="font-semibold text-xl mb-2">Track Your Spending</h3>
+                    <p class="text-gray-500 mb-4">
+                        Discover simple apps and techniques to monitor your daily expenses and find areas to save.
+                    </p>
+                    <a href="spending.html" class="text-indigo-600 hover:underline font-medium">Learn More &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3 class="font-semibold text-xl mb-2">Set Financial Goals</h3>
+                    <p class="text-gray-500 mb-4">
+                        From saving for a trip to paying off a student loan, learn to set and achieve your goals with smart planning.
+                    </p>
+                    <a href="goals.html" class="text-indigo-600 hover:underline font-medium">Learn More &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="learn" class="container-section text-center bg-gray-100 rounded-3xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Grow Your Wealth</h2>
+            <p class="text-gray-600 mb-12 max-w-3xl mx-auto">
+                Ready to take the next step? Explore how stocks, cryptocurrencies, and other assets work in simple, jargon-free terms.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <a href="https://www.khanacademy.org/college-careers-more/financial-literacy" target="_blank" class="link-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 mr-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z"/>
+                    </svg>
+                    <div>
+                        <h4 class="font-semibold text-lg">Introduction to Stock Markets</h4>
+                        <p class="text-sm text-gray-500">
+                            A beginner's guide to how stocks work, from trading to dividends.
+                        </p>
+                    </div>
+                </a>
+                <a href="https://www.investopedia.com/articles/forex/111111/introduction-cryptocurrency.asp" target="_blank" class="link-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 mr-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 11h-2v2h2v-2zm-4 0h-2v2h2v-2zm-4 0h-2v2h2v-2zM8 9h2V7h-2v2zm4 0h2V7h-2v2zm-4-4h2v2h-2V5zm4 0h2v2h-2V5zm4-4h2v2h-2V1z"/>
+                    </svg>
+                    <div>
+                        <h4 class="font-semibold text-lg">Understanding Blockchain & Crypto</h4>
+                        <p class="text-sm text-gray-500">
+                            Demystifying Bitcoin, Ethereum, and the decentralized world of finance.
+                        </p>
+                    </div>
+                </a>
+                <a href="https://www.consumerfinance.gov/consumer-tools/student-loans/" target="_blank" class="link-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 mr-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z"/>
+                    </svg>
+                    <div>
+                        <h4 class="font-semibold text-lg">Navigating Student Loans</h4>
+                        <p class="text-sm text-gray-500">
+                            Everything you need to know about interest rates, repayment plans, and avoiding loan traps.
+                        </p>
+                    </div>
+                </a>
+                <a href="https://www.investopedia.com/terms/e/emergency_fund.asp" target="_blank" class="link-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 mr-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm0-8h2V7h-2v2z"/>
+                    </svg>
+                    <div>
+                        <h4 class="font-semibold text-lg">Building an Emergency Fund</h4>
+                        <p class="text-sm text-gray-500">
+                            A guide on why you need one and how to start saving for unexpected expenses.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="chat" class="container-section text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Your AI Financial Coach</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Ask anything about money. From budgeting tips to understanding a loan's fine print, our AI is here to help.
+            </p>
+            <div class="bg-gray-100 p-6 rounded-2xl shadow-xl max-w-3xl mx-auto">
+                <div id="chat-box" class="chat-container flex flex-col gap-4 overflow-y-auto mb-4 p-4 rounded-xl bg-white shadow-inner">
+                    <div class="flex justify-start">
+                        <div class="ai-message">Hello! I'm your AI financial coach. How can I help you today?</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <input type="text" id="user-input" placeholder="Ask your question here..." class="flex-grow p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow">
+                    <button id="send-btn" class="bg-indigo-600 text-white p-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:bg-indigo-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-indigo-800 text-white py-8 text-center">
+        <div class="container mx-auto">
+            <p class="text-sm opacity-75">&copy; 2025 Financial Savvy AI. Built with ❤️ for students.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatBox = document.getElementById('chat-box');
+            const userInput = document.getElementById('user-input');
+            const sendBtn = document.getElementById('send-btn');
+            
+            const API_ENDPOINT = 'http://localhost:5001/api/chat';
+
+            function addMessage(text, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('flex', isUser ? 'justify-end' : 'justify-start');
+                
+                const bubble = document.createElement('div');
+                bubble.classList.add('chat-message', isUser ? 'user-message' : 'ai-message');
+                bubble.textContent = text;
+                
+                messageDiv.appendChild(bubble);
+                chatBox.appendChild(messageDiv);
+                
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+
+            function showLoading() {
+                const loadingDiv = document.createElement('div');
+                loadingDiv.id = 'loading';
+                loadingDiv.classList.add('flex', 'justify-start');
+                
+                const bubble = document.createElement('div');
+                bubble.classList.add('ai-message', 'loading-dots');
+                bubble.innerHTML = '<span></span><span></span><span></span>';
+                
+                loadingDiv.appendChild(bubble);
+                chatBox.appendChild(loadingDiv);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+
+            function removeLoading() {
+                const loadingDiv = document.getElementById('loading');
+                if (loadingDiv) {
+                    loadingDiv.remove();
+                }
+            }
+
+            async function sendMessage() {
+                const prompt = userInput.value.trim();
+                if (prompt === '') return;
+
+                addMessage(prompt, true);
+                userInput.value = '';
+                showLoading();
+
+                try {
+                    const response = await fetch(API_ENDPOINT, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            model: "gpt-4o",
+                            messages: [
+                                {
+                                    "role": "system",
+                                    "content": "You are an AI financial coach for students. Your goal is to provide simple, actionable advice on budgeting, loans, and financial literacy. Always be friendly and easy to understand."
+                                },
+                                {
+                                    "role": "user",
+                                    "content": prompt
+                                }
+                            ]
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API call failed with status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.choices && result.choices.length > 0 && result.choices[0].message && result.choices[0].message.content) {
+                        const text = result.choices[0].message.content;
+                        addMessage(text, false);
+                    } else {
+                        addMessage("Sorry, I couldn't get a response. Please try again.", false);
+                    }
+                } catch (error) {
+                    console.error('API Error:', error);
+                    addMessage("An error occurred. Please check your internet connection and try again.", false);
+                } finally {
+                    removeLoading();
+                }
+            }
+            
+            sendBtn.addEventListener('click', sendMessage);
+            userInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
